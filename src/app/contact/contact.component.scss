@@ -1,0 +1,20 @@
+.submit-button {
+    margin-bottom: 30px;
+}
+
+.inner-text {
+    margin: 40px;
+}
+
+.center {
+    padding-top: 30px;
+    margin: 50px 0;
+    text-align: center;
+}
+
+@media (min-width: 500px) {
+    .sub-container {
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+}
