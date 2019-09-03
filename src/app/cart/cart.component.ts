@@ -9,9 +9,11 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  addedItems: Object[] = []
+  addedItems: Object[] = [];
 
   constructor(private cartService: CartService, private router: Router) { }
+
+  
 
   get subtotal() {
     let total = 0;
@@ -40,8 +42,15 @@ export class CartComponent implements OnInit {
     this.router.navigate(['checkout']);
   }
 
+  removeItem(i) {
+    JSON.parse(localStorage.getItem('cartItems')).splice(i, 1);
+    this.addedItems.splice(i, 1);
+  }
+
+
+
   ngOnInit() {
-    this.addedItems = this.cartService.addedItem;
+    this.addedItems = this.cartService.pullItems();
   }
 
 }

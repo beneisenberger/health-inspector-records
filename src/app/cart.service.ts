@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import forSale from './forSale';
+import { getLocaleTimeFormat } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,11 @@ checkoutItems: any;
       imageUrl: addItem.imageUrl
     }
     this.addedItem.push(itemAdded);
-    console.log(this.addedItem);
+    localStorage.setItem('cartItems', JSON.stringify(this.addedItem));
+  }
+
+  pullItems() {
+    return JSON.parse(localStorage.getItem('cartItems'));
   }
 
   checkout(addedItems, sub, tot, ship) {
