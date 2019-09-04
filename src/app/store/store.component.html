@@ -2,7 +2,6 @@
     <h2 class="col-8 center">// store //</h2>
     <div class="col-2 top"><a href="">Login</a> /<br><a class="" href="">Register</a></div>
     <a [routerLink]="['cart']" class="col-2 top"><img class="icon" src="assets/mycart.jpg">Cart</a>
-
     <div *ngFor="let item of itemsForSale" class="artist row main">
         <img class="image col-md-4 col-6" [src]="item.imageUrl">
         <span class="col-md-3 col-6">
@@ -26,6 +25,4 @@
             <button (click)="addToCart(item)" class="btn btn-primary btn-sm button">Add to Cart</button>
         </div>
     </div>
-
-    
 </main>

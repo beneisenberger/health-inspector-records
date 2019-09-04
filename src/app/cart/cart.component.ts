@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../cart.service';
+import { CartService, Cart } from '../cart.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,15 +9,13 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  addedItems: Object[] = [];
+  cart: Cart[];
 
-  constructor(private cartService: CartService, private router: Router) { }
-
-  
+  constructor(public cartService: CartService, private router: Router) { }
 
   get subtotal() {
     let total = 0;
-    this.addedItems.forEach(x => {
+    this.cart.forEach(x => {
       total += x["quantity"] * x["price"];
     })
     return total;
@@ -25,7 +23,7 @@ export class CartComponent implements OnInit {
 
   get shipping() {
     let total = 0;
-    this.addedItems.forEach(x => {
+    this.cart.forEach(x => {
       total += x["quantity"] * 1.5;
     })
     return total;
@@ -38,19 +36,17 @@ export class CartComponent implements OnInit {
   }
 
   sendToCheckout() {
-    this.cartService.checkout(this.addedItems, this.subtotal, this.total, this.shipping);
+    this.cartService.checkout(this.cart, this.subtotal, this.total, this.shipping);
     this.router.navigate(['checkout']);
   }
 
   removeItem(i) {
     JSON.parse(localStorage.getItem('cartItems')).splice(i, 1);
-    this.addedItems.splice(i, 1);
+    this.cartService.cart.splice(i, 1);
+    localStorage.setItem('cartItems', JSON.stringify(this.cart));
   }
-
-
 
   ngOnInit() {
-    this.addedItems = this.cartService.pullItems();
+    this.cartService.cart$.subscribe(val => this.cart = val);
   }
-
 }

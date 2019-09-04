@@ -1,20 +1,42 @@
 import { Injectable } from '@angular/core';
-import forSale from './forSale';
-import { getLocaleTimeFormat } from '@angular/common';
+import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+export interface Cart {
+  artist: string,
+  album: string,
+  type: string,
+  price: number,
+  quantity: number,
+  imageUrl: string
+}
+
+let startingCart = JSON.parse(localStorage.getItem('cartItems'));
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-itemsForSale: Object[] = forSale;
-addedItem: Object[] = [];
-checkoutItems: any;
+  private readonly _cart = new BehaviorSubject<Cart[]>(startingCart);
+  readonly cart$ = this._cart.asObservable();
+
+  addedItem: Cart[] = [];
+  checkoutItems: any;
 
   constructor() { }
 
+  get cart(): Cart[] {
+    return this._cart.getValue();
+  }
+
+  set cart(updatedCart: Cart[]) {
+    this._cart.next(updatedCart);
+  }
+
   addItem(addItem) {
-    let itemAdded = {
+    let newItem = {
       artist: addItem.artist,
       album: addItem.album,
       type: addItem.item[0].type,
@@ -22,8 +44,8 @@ checkoutItems: any;
       quantity: 1,
       imageUrl: addItem.imageUrl
     }
-    this.addedItem.push(itemAdded);
-    localStorage.setItem('cartItems', JSON.stringify(this.addedItem));
+    this.cart = [...this.cart, newItem];
+    localStorage.setItem('cartItems', JSON.stringify(this.cart));
   }
 
   pullItems() {
