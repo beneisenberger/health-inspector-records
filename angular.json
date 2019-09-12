@@ -25,7 +25,7 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "docs/assets"
+              "src/health-inspector-records/assets"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
