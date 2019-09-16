@@ -1,7 +1,7 @@
 <main class="d-flex row">
     <h2 class="col-8 center">// store //</h2>
     <div class="col-2 top"><a href="">Login</a> /<br><a class="" href="">Register</a></div>
-    <a [routerLink]="['cart']" class="col-2 top"><img class="icon" src="health-inspector-records/assets/mycart.jpg">Cart</a>
+    <a [routerLink]="['cart']" class="col-2 top"><img class="icon" src="./assets/mycart.jpg">Cart</a>
     <div *ngFor="let item of itemsForSale" class="artist row main">
         <img class="image col-md-4 col-6" [src]="item.imageUrl">
         <span class="col-md-3 col-6">
@@ -9,10 +9,10 @@
             <h5><i>{{item.album}}</i> ({{item.year}})</h5>
             {{item.catalog}}
             <p *ngFor="let option of item.options">{{option}}</p>
-            <a [href]="item.spotifyUrl"><img class="icon" src="health-inspector-records/assets/spotify.png"></a>
-            <a [href]="item.applemusicUrl"><img class="icon" src="health-inspector-records/assets/applemusic.jpg"></a>
-            <a [href]="item.bandcampUrl"><img class="icon" src="health-inspector-records/assets/bandcamp.png"></a>
-            <a [href]="item.discogsUrl"><img class="icon" src="health-inspector-records/assets/discogs.jpg"></a>
+            <a [href]="item.spotifyUrl"><img class="icon" src="./assets/spotify.png"></a>
+            <a [href]="item.applemusicUrl"><img class="icon" src="./assets/applemusic.jpg"></a>
+            <a [href]="item.bandcampUrl"><img class="icon" src="./assets/bandcamp.png"></a>
+            <a [href]="item.discogsUrl"><img class="icon" src="./assets/discogs.jpg"></a>
         </span>
         <div class="col-md-5 col-12">
             <p>{{item.description}}</p>
