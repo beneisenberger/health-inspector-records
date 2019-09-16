@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Health-Inspector-Records": {
+    "health-inspector-records": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Health-Inspector-Records",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Health-Inspector-Records:build"
+            "browserTarget": "health-inspector-records:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Health-Inspector-Records:build:production"
+              "browserTarget": "health-inspector-records:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Health-Inspector-Records:build"
+            "browserTarget": "health-inspector-records:build"
           }
         },
         "test": {
@@ -120,15 +120,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Health-Inspector-Records:serve"
+            "devServerTarget": "health-inspector-records:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Health-Inspector-Records:serve:production"
+              "devServerTarget": "health-inspector-records:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "Health-Inspector-Records"
+  "defaultProject": "health-inspector-records"
 }
