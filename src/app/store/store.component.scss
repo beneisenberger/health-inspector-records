@@ -1,7 +1,15 @@
+.this-one {
+    margin-top: 30px;
+}
+
 .image {
     padding: 15px;
     max-height: 170px;
     max-width: 170px;
+}
+
+.main-cont {
+    margin-top: 30px;
 }
 
 .artist {
@@ -19,12 +27,13 @@
 }
 
 .icon {
-    height: 25px;
-    margin-right: 5px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 .top {
     margin-top: 90px;
+    text-align: right;
 }
 
 .artist-stuff {
@@ -33,4 +42,9 @@
 
 .main {
     margin: 0 10vw;
+}
+
+.red {
+    color: red;
+    text-decoration: line-through;
 }

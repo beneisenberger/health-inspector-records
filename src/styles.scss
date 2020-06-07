@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    width: 1200px;
+}
+
+.navbar {
+    padding: 12px 0 0 0;
+}
+
+.navbar li {
+    width: 20%;
+    text-align: center;
+}
+
+.navbar-image {
+    height: 40px;
+}

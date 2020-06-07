@@ -7,7 +7,10 @@ export default forSale = [
         year: "2019",
         catalog: "HI-010",
         options: [
-            "50 x CASS"
+            {
+                type: "50 x CASS",
+                status: 'active'
+            }
         ],
         description: "A collection of songs spanning several years, this is Tom Bartolomei of Hussies' first solo release. Recorded to tape by Stephen Bartolomei, who also has mixing credits as well as backing guitar.",
         spotifyUrl: "https://open.spotify.com/album/3FyL7sEC4K2BcP3LaOCAyW",
@@ -17,7 +20,8 @@ export default forSale = [
         item: [
             {
             type: "Cassette",
-            price: 5
+            price: 5,
+            status: 'active'
             },
         ]
     },
@@ -28,7 +32,10 @@ export default forSale = [
         year: "2019",
         catalog: "HI-009",
         options: [
-            "200 x CD"
+            {
+                type: "200 x CD",
+                status: 'active'
+            }        
         ],
         description: "The New Music USA-sponsored proper album from Omaha's avant-classical improvisers. This collection is taken from several improvisations all recorded live at Omaha's ARC Studios by Ben Brodin, and edited to fit the album format.",
         spotifyUrl: "https://open.spotify.com/album/1vflLDG3YgkcVHYZFkI9KB",
@@ -38,7 +45,8 @@ export default forSale = [
         item: [
             {
             type: "CD",
-            price: 10
+            price: 7,
+            status: 'active'
             },
         ]
     },
@@ -49,7 +57,10 @@ export default forSale = [
         year: "2019",
         catalog: "HI-008",
         options: [
-            "20 x CASS"
+            {
+                type: "20 x CASS",
+                status: 'active'
+            }        
         ],
         description: "Definitely one of Hussies' most melodic collection of songs to date, this release completes the 'Going Nowhere Fast' series of cassettes, and is a nice dip into the band's guitar-driven sound.",
         spotifyUrl: "https://open.spotify.com/album/392s2wonCedvrFEwyo7iVa",
@@ -59,7 +70,8 @@ export default forSale = [
         item: [
             {
             type: "Cassette",
-            price: 5
+            price: 5,
+            status: 'active'
             }
         ]
     },    
@@ -70,9 +82,18 @@ export default forSale = [
         year: "2018",
         catalog: "HI-007",
         options: [
-            "50 x CASS",
-            "150 x CASS",
-            "100 x CD"
+            {
+                type: "50 x CASS",
+                status: 'inactive'
+            },
+            {
+                type: "150 x CASS",
+                status: 'active'
+            },
+            {
+                type: "100 x CD",
+                status: 'inactive'
+            }
         ],
         description: "Ben Eisenberger's first solo release and introduction to his soft folk songwriting. The album presents itself as stark and light, with very exposed vocals and intricate guitar playing in this live-take tracks, accompannied by Hannah Mayer's overdubbed cello.",
         spotifyUrl: "https://open.spotify.com/album/3JwKDzAId4pbz2wihicKzi",
@@ -82,12 +103,14 @@ export default forSale = [
         item: [
             {
             type: "Cassette",
-            price: 5
+            price: 5,
+            status: 'active'
             },
             {
-            type: "CD",
-            price: 7 
-            }
+                type: "CD",
+                price: 7,
+                status: 'inactive'
+                }
         ]
     },
     {
@@ -97,7 +120,10 @@ export default forSale = [
         year: "2018",
         catalog: "HI-006",
         options: [
-            "50 x CASS"
+            {
+                type: "50 x CASS",
+                status: 'inactive'
+            }
         ],
         description: "A slightly more polished, but equally as dark self-titled release from the Omaha hardcore band. Heavy and quick riffs sludge through booming low chords and clashing tritones to make a delightfully intense-but-brisk output.",
         spotifyUrl: "https://open.spotify.com/album/6XgcAIcbQZkYadnjpD2FsW",
@@ -107,7 +133,8 @@ export default forSale = [
         item: [
             {
             type: "Cassette",
-            price: 5
+            price: 5,
+            status: 'inactive'
             }
         ]
     },    
@@ -118,8 +145,14 @@ export default forSale = [
         year: "2017",
         catalog: "HI-005",
         options: [
-            "50 x CASS",
-            "25 x CASS"
+            {
+                type: "50 x CASS",
+                status: 'inactive'
+            },
+            {
+                type: "25 x CASS",
+                status: 'active'
+            }
         ],
         description: "Hussies' first recording post-hiatus, this album captures the mood of singer Tom Bartolomei struggling with love, overindulgence, and the typical happenings of a mid-twenties midwestern songwriter.",
         spotifyUrl: "https://open.spotify.com/album/3rgM7j12HTrgf2d6uC3xd5",
@@ -129,7 +162,8 @@ export default forSale = [
         item: [
             {
             type: "Cassette",
-            price: 5
+            price: 5,
+            status: 'active'
             }
         ]
     },    
@@ -140,7 +174,10 @@ export default forSale = [
         year: "2017",
         catalog: "HI-004",
         options: [
-            "50 x CASS"
+            {
+                type: "50 x CASS",
+                status: 'active'
+            }        
         ],
         description: "Screaming Plastic's second collection of live improvisations to be dubbed to tape - recorded in the same way as the others previous.",
         spotifyUrl: "",
@@ -150,7 +187,8 @@ export default forSale = [
         item: [
             {
             type: "Cassette",
-            price: 5
+            price: 5,
+            status: 'active'
             }
         ]
     },
@@ -161,7 +199,10 @@ export default forSale = [
         year: "2017",
         catalog: "HI-003",
         options: [
-            "30 x CASS"
+            {
+                type: "30 x CASS",
+                status: 'inactive'
+            }        
         ],
         description: "A quickly-recorded demo of sorts for the Omaha punk band. This tape is raw and loud, mixing elements of hardcore punk, metal, industrial, and sideways guitar riffs.",
         spotifyUrl: "https://open.spotify.com/album/1D34vPjYhVgUbLS8qhKZBk",
@@ -171,7 +212,8 @@ export default forSale = [
         item: [
             {
             type: "Cassette",
-            price: 5
+            price: 5,
+            status: 'inactive'
             }
         ]
     },
@@ -182,8 +224,14 @@ export default forSale = [
         year: "2017",
         catalog: "HI-002",
         options: [
-            "25 x CASS",
-            "25 x CASS"
+            {
+                type: "25 x CASS",
+                status: 'inactive'
+            }, 
+            {
+                type: "25 x CASS",
+                status: 'active'
+            }   
         ],
         description: "The first collection of improvisations from the Omaha chamber group, recorded directly from room to iPhone and then dubbed onto tape. Simple and surprisingly effective to put you into a good headspace.",
         spotifyUrl: "",
@@ -193,7 +241,8 @@ export default forSale = [
         item: [
             {
             type: "Cassette",
-            price: 5
+            price: 5,
+            status: 'active'
             }
         ]
     },
@@ -204,8 +253,14 @@ export default forSale = [
         year: "2016",
         catalog: "HI-001",
         options: [
-            "25 x CASS",
-            "25 x CASS"
+            {
+                type: "25 x CASS",
+                status: 'inactive'
+            }, 
+            {
+                type: "25 x CASS",
+                status: 'active'
+            }   
         ],
         description: "The first Hussies release - this album was recorded in a basement ca. 2013, and possesses an overall very different vibe than more recent recordings - much more hardcore punk than melodic.",
         spotifyUrl: "https://open.spotify.com/album/2eU7LgMOx4t5FkBeKm1RXV",
@@ -215,7 +270,8 @@ export default forSale = [
         item: [
             {
             type: "Cassette",
-            price: 5
+            price: 5,
+            status: 'active'
             }
         ]
     },

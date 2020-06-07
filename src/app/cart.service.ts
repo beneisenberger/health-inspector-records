@@ -44,7 +44,18 @@ export class CartService {
       quantity: 1,
       imageUrl: addItem.imageUrl
     }
-    this.cart = [...this.cart, newItem];
+    if (this.cart.length > 0) {
+      if (this.cart.some(item => item.album === newItem.album)) {
+        let item = this.cart.find(item => item.album === newItem.album)
+        item.quantity++;
+      }
+      else {
+        this.cart.push(newItem);
+      }
+    } else {
+      this.cart = [];
+      this.cart.push(newItem);
+    }
     localStorage.setItem('cartItems', JSON.stringify(this.cart));
   }
 

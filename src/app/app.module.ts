@@ -13,6 +13,13 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+
+registerLocaleData(en);
 
 @NgModule({
   declarations: [
@@ -30,9 +37,12 @@ import { CheckoutComponent } from './checkout/checkout.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgZorroAntdModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

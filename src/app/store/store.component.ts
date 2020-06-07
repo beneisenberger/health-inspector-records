@@ -10,14 +10,23 @@ import forSale from '../forSale';
 export class StoreComponent implements OnInit {
 
   itemsForSale = forSale;
+  selectedItem = [];
 
-  constructor(private cartService: CartService) { }
+  constructor(public cartService: CartService) { }
 
   ngOnInit() {
+    this.getItems()
   }
 
-  addToCart(item) {
-    this.cartService.addItem(item);
+  async getItems() {
+    await this.itemsForSale;
+    this.selectedItem.length === this.itemsForSale.length
+  }
+
+  addToCart(item, product) {
+    if (product.status === 'active') {
+      this.cartService.addItem(item);
+    }
   }
 
 }

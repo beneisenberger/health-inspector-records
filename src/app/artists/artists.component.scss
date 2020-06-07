@@ -1,5 +1,8 @@
 .artist {
-    padding: 30px;
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+    margin: 5px;
 }
 
 .title {
@@ -7,13 +10,54 @@
 }
 
 .image {
-    object-fit: cover;
-    height: 200px;
-    width: 100%;
     padding: 5px;
-}
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+  }
+
+  .squat {
+      height: 100%;
+  }
+
+  .tall {
+      width: 100%;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: white;
+  }
+  
+  .artist:hover .overlay {
+    opacity: .7;
+  }
+  
+  .text {
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 
 .center {
+    display: flex;
     padding-top: 30px;
     margin: 30px 0;
     text-align: center;
@@ -21,8 +65,14 @@
 
 .main {
     margin: 0 100px;
+    max-width: 1000px;
 }
 
 .banner {
     height: 80px;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
 }

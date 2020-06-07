@@ -1,28 +1,28 @@
-<main class="d-flex row">
-    <h2 class="col-8 center">// store //</h2>
-    <div class="col-2 top"><a href="">Login</a> /<br><a class="" href="">Register</a></div>
-    <a [routerLink]="['cart']" class="col-2 top"><img class="icon" src="./assets/mycart.jpg">Cart</a>
-    <div *ngFor="let item of itemsForSale" class="artist row main">
+<main class="d-flex row this-one">
+    <a *ngIf="cartService.cart" [routerLink]="['cart']" class="col-12 top"><img class="icon" src="./assets/mycart.jpg">{{ cartService.cart.length === 0 ? 'My Cart' : 'My Cart ('+ this.cartService.cart.length +')' }}</a>
+    <div *ngFor="let item of itemsForSale; let i = index" class="artist row main">
         <img class="image col-md-4 col-6" [src]="item.imageUrl">
         <span class="col-md-3 col-6">
             <h4>{{item.artist}}</h4>
             <h5><i>{{item.album}}</i> ({{item.year}})</h5>
-            {{item.catalog}}
-            <p *ngFor="let option of item.options">{{option}}</p>
-            <a [href]="item.spotifyUrl"><img class="icon" src="./assets/spotify.png"></a>
-            <a [href]="item.applemusicUrl"><img class="icon" src="./assets/applemusic.jpg"></a>
-            <a [href]="item.bandcampUrl"><img class="icon" src="./assets/bandcamp.png"></a>
-            <a [href]="item.discogsUrl"><img class="icon" src="./assets/discogs.jpg"></a>
+            <p style="margin-bottom: 16px;">{{item.catalog}}</p>
+            <p *ngFor="let option of item.options" [class]="option.status === 'inactive' ? 'red' : ''" style="margin-bottom: 0;">{{option.type}}</p>
+            <div style="margin-top: 16px;">
+                <a [href]="item.spotifyUrl"><img class="icon" src="./assets/spotify.png"></a>
+                <a [href]="item.applemusicUrl"><img class="icon" src="./assets/applemusic.jpg"></a>
+                <a [href]="item.bandcampUrl"><img class="icon" src="./assets/bandcamp.png"></a>
+                <a [href]="item.discogsUrl"><img class="icon" src="./assets/discogs.jpg"></a>
+            </div>
         </span>
         <div class="col-md-5 col-12">
             <p>{{item.description}}</p>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Choose one:</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option *ngFor="let item of item.item">{{item.type}} ($<p>{{item.price}}</p>)</option>
+                <label>Choose One:</label>
+                <select class="form-control" [(ngModel)]="selectedItem[i]">
+                    <option *ngFor="let product of item.item" [ngValue]="product" [disabled]="product.status === 'inactive'">{{product.type}} <p>${{product.price}}</p></option>
                 </select>
             </div>
-            <button (click)="addToCart(item)" class="btn btn-primary btn-sm button">Add to Cart</button>
+            <button [disabled]="!selectedItem[i]" (click)="addToCart(item, selectedItem[i])" class="btn btn-primary btn-sm button">Add to Cart</button>
         </div>
     </div>
 </main>
