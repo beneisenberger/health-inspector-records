@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import { CartService } from "./cart.service";
 
 @Component({
   selector: "app-root",
@@ -10,7 +11,7 @@ export class AppComponent {
   title = "Health-Inspector-Records";
   visible = false;
 
-  constructor(private router: Router) {}
+  constructor(public router: Router, public cartSerivce: CartService) {}
 
   openNav() {
     document.getElementById("myNav").style.opacity = "100%";
@@ -27,5 +28,17 @@ export class AppComponent {
   navigate(route) {
     this.router.navigateByUrl(route);
     this.closeNav();
+  }
+
+  onBack(x: string) {
+    if (x === "artists") {
+      this.router.navigateByUrl("/artists");
+    }
+    if (x === "cart") {
+      this.router.navigateByUrl("/store");
+    }
+    if (x === "checkout") {
+      this.router.navigateByUrl("/store/cart");
+    }
   }
 }

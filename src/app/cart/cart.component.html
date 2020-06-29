@@ -1,6 +1,5 @@
 <main class="d-flex row main">
-  <a (click)="onBack()" class="col-12 top">Back to Store</a>
-  <section class="shopping-cart dark">
+  <section class="shopping-cart dark" *ngIf="cart.length > 0">
     <div class="container">
       <div class="content row">
         <div class="col-md-12 col-lg-8 items">
@@ -34,6 +33,7 @@
                   <input
                     id="quantity"
                     type="number"
+                    min="0"
                     [(ngModel)]="item.quantity"
                     class="form-control quantity-input"
                   />

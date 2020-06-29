@@ -1,15 +1,48 @@
 <div class="the-top-bar">
-  <span class="open" (click)="openNav()"
-    >&#9776; <br />
+  <div class="top-button-container">
+    <span class="open" (click)="openNav()"
+      >&#9776; <br />
+      <a
+        *ngIf="visible"
+        href="javascript:void(0)"
+        class="closebtn"
+        (click)="closeNav()"
+        >&times;</a
+      >
+    </span>
+    <img
+      *ngIf="router.url.includes('artists/')"
+      (click)="onBack('artists')"
+      style="height: 33px;"
+      class="back-button"
+      src="../assets/back.png"
+    />
+    <img
+      *ngIf="router.url.includes('cart')"
+      (click)="onBack('cart')"
+      style="height: 33px;"
+      class="back-button"
+      src="../assets/back.png"
+    />
+    <img
+      *ngIf="router.url.includes('checkout')"
+      (click)="onBack('checkout')"
+      style="height: 33px;"
+      class="back-button"
+      src="../assets/back.png"
+    />
     <a
-      *ngIf="visible"
-      href="javascript:void(0)"
-      class="closebtn"
-      (click)="closeNav()"
-      >&times;</a
+      class="upper-text"
+      *ngIf="router.url === '/store'"
+      routerLink="store/cart"
+      ><img
+        style="height: 20px; margin-right: 10px;"
+        src="./assets/mycart.jpg"
+      />{{
+        cartSerivce.cart ? "My Cart (" + cartSerivce.cart.length + ")" : ""
+      }}</a
     >
-    <!-- <img style="height: 40px; margin-right: 10px;" src="../assets/logo-image.jpg"> -->
-  </span>
+  </div>
 </div>
 <div class="container">
   <div id="myNav" class="overlay">

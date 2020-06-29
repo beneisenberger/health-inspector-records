@@ -32,17 +32,36 @@
   z-index: 2;
 }
 
+.back-button {
+  position: relative;
+  top: -44px;
+  left: 60px;
+  background-color: white;
+  z-index: 3;
+  cursor: pointer;
+}
+
 .closebtn:hover {
   color: #f1f1f1;
 }
 
-.open {
+.top-button-container {
   position: fixed;
   display: block;
+  left: 20%;
+}
+
+.upper-text {
+  position: fixed;
+  display: block;
+  right: 20%;
+  top: 22px;
+}
+
+.open {
   cursor: pointer;
   z-index: 1;
   font-size: 40px;
-  left: 20%;
 }
 
 .overlay-content {

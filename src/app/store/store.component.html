@@ -1,9 +1,4 @@
 <main class="d-flex row this-one main">
-  <a [routerLink]="['cart']" class="col-12 top"
-    ><img class="icon" src="./assets/mycart.jpg" />{{
-      cartService.cart ? "My Cart (" + this.cartService.cart.length + ")" : ""
-    }}</a
-  >
   <div
     *ngFor="let item of itemsForSale; let i = index"
     class="artist row main col-12"

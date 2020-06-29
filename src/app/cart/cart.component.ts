@@ -30,10 +30,22 @@ export class CartComponent implements OnInit {
   }
 
   get shipping() {
-    let total = 0;
+    let quantity = 0;
     this.cart.forEach((x) => {
-      total += x["quantity"] * 1.5;
+      quantity += x["quantity"];
     });
+    let total = 0;
+    if (quantity === 0) {
+      total = 0;
+    } else if (quantity === 1) {
+      total = 3;
+    } else if (quantity === 2 || quantity === 3) {
+      total = 5;
+    } else if (quantity === 4 || quantity === 5) {
+      total = 8;
+    } else {
+      total = 10;
+    }
     return total;
   }
 
