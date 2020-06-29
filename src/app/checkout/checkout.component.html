@@ -9,118 +9,109 @@
           <h3 class="title">Checkout</h3>
 
           <div class="item" *ngFor="let item of items.items">
-            <span class="price">{{item.quantity}} x ${{item.price}}</span>
-            <p class="item-name">{{item.album}} - {{item.type}}</p>
-            <p class="item-description">{{item.artist}}</p>
+            <span class="price">{{ item.quantity }} x ${{ item.price }}</span>
+            <p class="item-name">{{ item.album }} - {{ item.type }}</p>
+            <p class="item-description">{{ item.artist }}</p>
           </div>
-          <div class="item">Subtotal<span class="price">${{items.subtotal}}</span></div>
-          <div class="item">Shipping<span class="price">${{items.shipping}}</span></div>
-          <div class="total">Total<span class="price">${{items.total}}</span></div>
-        </div>
-
-        <div class="card-details">
-          <h3 class="title">Credit Card Details</h3>
-          <div class="row">
-            <div class="form-group col-sm-7">
-              <label for="card-holder">Card Holder</label>
-              <input id="card-holder" type="text" class="form-control" placeholder="Card Holder"
-                aria-label="Card Holder" aria-describedby="basic-addon1">
-            </div>
-            <div class="form-group col-sm-5">
-              <label for="">Expiration Date</label>
-              <div class="input-group expiration-date">
-                <input type="text" class="form-control" placeholder="MM" aria-label="MM"
-                  aria-describedby="basic-addon1">
-                <span class="date-separator">/</span>
-                <input type="text" class="form-control" placeholder="YY" aria-label="YY"
-                  aria-describedby="basic-addon1">
-              </div>
-            </div>
-            <div class="form-group col-sm-8">
-              <label for="card-number">Card Number</label>
-              <input id="card-number" type="text" class="form-control" placeholder="Card Number"
-                aria-label="Card Holder" aria-describedby="basic-addon1">
-            </div>
-            <div class="form-group col-sm-4">
-              <label for="cvc">CVC</label>
-              <input id="cvc" type="text" class="form-control" placeholder="CVC" aria-label="Card Holder"
-                aria-describedby="basic-addon1">
-            </div>
+          <div class="item">
+            Subtotal<span class="price">${{ items.subtotal }}</span>
+          </div>
+          <div class="item">
+            Shipping<span class="price">${{ items.shipping }}</span>
+          </div>
+          <div class="total">
+            Total<span class="price">${{ items.total }}</span>
           </div>
         </div>
 
         <div class="card-details">
-          <h3 class="title">Billing Address</h3>
+          <h3 class="title">Shipping Information</h3>
           <div class="row">
             <div class="form-group col-sm-12">
-              <label for="name">Name</label>
-              <input id="name" type="text" class="form-control" placeholder="Name" aria-label="Name"
-                aria-describedby="basic-addon1">
+              <label for="name">Customer Information</label>
+              <input
+                id="name"
+                type="text"
+                class="form-control"
+                placeholder="Name (as it appears on credit/debit card)"
+                aria-label="Name"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="form-group col-sm-12">
+              <input
+                id="email"
+                type="text"
+                class="form-control"
+                placeholder="Email"
+                aria-label="Email"
+                aria-describedby="basic-addon1"
+              />
             </div>
             <div class="form-group col-sm-9">
-              <label for="billing-address">Billing Address</label>
-              <input id="street" type="text" class="form-control" placeholder="Street" aria-label="Street"
-                aria-describedby="basic-addon1">
+              <label for="billing-address">Shipping Address</label>
+              <input
+                id="street"
+                type="text"
+                class="form-control"
+                placeholder="Street"
+                aria-label="Street"
+                aria-describedby="basic-addon1"
+              />
             </div>
             <div class="form-group col-sm-3">
-                <label for="billing-address"> </label>
-              <input id="apt-number" type="text" class="form-control apt" placeholder="Apt/Suite" aria-label="Apt-Number"
-                aria-describedby="basic-addon1">
+              <label for="billing-address"> </label>
+              <input
+                id="apt-number"
+                type="text"
+                class="form-control apt"
+                placeholder="Apt/Suite"
+                aria-label="Apt-Number"
+                aria-describedby="basic-addon1"
+              />
             </div>
             <div class="form-group col-sm-4">
-              <input id="city" type="text" class="form-control" placeholder="City" aria-label="City"
-                aria-describedby="basic-addon1">
+              <input
+                id="city"
+                type="text"
+                class="form-control"
+                placeholder="City"
+                aria-label="City"
+                aria-describedby="basic-addon1"
+              />
             </div>
             <div class="form-group col-sm-4">
-              <input id="state" type="text" class="form-control" placeholder="State" aria-label="State"
-                aria-describedby="basic-addon1">
+              <input
+                id="state"
+                type="text"
+                class="form-control"
+                placeholder="State"
+                aria-label="State"
+                aria-describedby="basic-addon1"
+              />
             </div>
             <div class="form-group col-sm-4">
-              <input id="zip" type="text" class="form-control" placeholder="Zip" aria-label="Zip"
-                aria-describedby="basic-addon1">
+              <input
+                id="zip"
+                type="text"
+                class="form-control"
+                placeholder="Zip"
+                aria-label="Zip"
+                aria-describedby="basic-addon1"
+              />
             </div>
           </div>
-        </div>
-
-
-          <div class="card-details">
-              <h3 class="title">Shipping Address<input class="checkbox" type="checkbox"><label for="checkbox">Same as billing address?</label></h3>
-              <div class="row">
-                <div class="form-group col-sm-12">
-                  <label for="name">Name</label>
-                  <input id="name" type="text" class="form-control" placeholder="Name" aria-label="Name"
-                    aria-describedby="basic-addon1">
-                </div>
-                <div class="form-group col-sm-9">
-                  <label for="billing-address">Shipping Address</label>
-                  <input id="street" type="text" class="form-control" placeholder="Street" aria-label="Street"
-                    aria-describedby="basic-addon1">
-                </div>
-                <div class="form-group col-sm-3">
-                    <label for="billing-address"> </label>
-                  <input id="apt-number" type="text" class="form-control apt" placeholder="Apt/Suite" aria-label="Apt-Number"
-                    aria-describedby="basic-addon1">
-                </div>
-                <div class="form-group col-sm-4">
-                  <input id="city" type="text" class="form-control" placeholder="City" aria-label="City"
-                    aria-describedby="basic-addon1">
-                </div>
-                <div class="form-group col-sm-4">
-                  <input id="state" type="text" class="form-control" placeholder="State" aria-label="State"
-                    aria-describedby="basic-addon1">
-                </div>
-                <div class="form-group col-sm-4">
-                  <input id="zip" type="text" class="form-control" placeholder="Zip" aria-label="Zip"
-                    aria-describedby="basic-addon1">
-                </div>
-              </div>
 
           <div class="form-group col-sm-12">
-              <button type="button" class="btn btn-primary btn-block">Place Order</button>
-            </div>
-  
-            </div>
-
+            <button
+              type="button"
+              (click)="pay(items.total)"
+              class="btn btn-primary btn-block"
+            >
+              Place Order
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   </section>

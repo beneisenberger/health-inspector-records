@@ -1,49 +1,83 @@
 <main class="d-flex row main">
-    <a (click)="onBack()" class="col-12 top">Back to Store</a>
-    <section class="shopping-cart dark">
-        <div class="container">
-            <div class="content row">
-                <div class="col-md-12 col-lg-8 items">
-                    <div class="product row" *ngFor="let item of cartService.cart$ | async; let i = index">
-                        <div class="col-md-3">
-                            <img class="img-fluid mx-auto d-block image" [src]="item.imageUrl">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="info row">
-                                <div class="col-md-5 product-name">
-                                    <div class="product-name">
-                                        <a href="#">{{item.album}}</a>
-                                        <div class="product-info">
-                                            <div>Artist: <span class="value">{{item.artist}}</span></div>
-                                            <div>Type: <span class="value">{{item.type}}</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 quantity">
-                                    <label for="quantity">Quantity:</label>
-                                    <input id="quantity" type="number" [(ngModel)]="item.quantity"
-                                        class="form-control quantity-input">
-                                </div>
-                                <div class="col-md-2 price">
-                                    <span>${{item.price}}</span>
-                                </div>
-                                <div class="col-md-1">
-                                    <img (click)="removeItem(i)" class="remove" src="./assets/remove.png" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4">
-                    <div class="summary">
-                        <h3>Summary</h3>
-                        <div class="summary-item"><span class="text">Subtotal</span><span class="price">${{subtotal}}</span></div>
-                        <div class="summary-item"><span class="text">Shipping</span><span class="price">${{shipping}}</span></div>
-                        <div class="summary-item"><span class="text">Total</span><span class="price">${{total}}</span></div>
-                        <button [disabled]="cartService.cart.length === 0" type="button" (click)="sendToCheckout()" class="btn btn-primary btn-lg btn-block">Checkout</button>
-                    </div>
-                </div>
+  <a (click)="onBack()" class="col-12 top">Back to Store</a>
+  <section class="shopping-cart dark">
+    <div class="container">
+      <div class="content row">
+        <div class="col-md-12 col-lg-8 items">
+          <div
+            class="product row"
+            *ngFor="let item of cartService.cart$ | async; let i = index"
+          >
+            <div class="col-md-3">
+              <img
+                class="img-fluid mx-auto d-block image"
+                [src]="item.imageUrl"
+              />
             </div>
+            <div class="col-md-8">
+              <div class="info row">
+                <div class="col-md-5 product-name">
+                  <div class="product-name">
+                    <a href="#">{{ item.album }}</a>
+                    <div class="product-info">
+                      <div>
+                        Artist: <span class="value">{{ item.artist }}</span>
+                      </div>
+                      <div>
+                        Type: <span class="value">{{ item.type }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 quantity">
+                  <label for="quantity">Quantity:</label>
+                  <input
+                    id="quantity"
+                    type="number"
+                    [(ngModel)]="item.quantity"
+                    class="form-control quantity-input"
+                  />
+                </div>
+                <div class="col-md-2 price">
+                  <span>${{ item.price }}</span>
+                </div>
+                <div class="col-md-1">
+                  <img
+                    (click)="removeItem(i)"
+                    class="remove"
+                    src="./assets/remove.png"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+        <div class="col-md-12 col-lg-4">
+          <div class="summary">
+            <h3>Summary</h3>
+            <div class="summary-item">
+              <span class="text">Subtotal</span
+              ><span class="price">${{ subtotal }}</span>
+            </div>
+            <div class="summary-item">
+              <span class="text">Shipping</span
+              ><span class="price">${{ shipping }}</span>
+            </div>
+            <div class="summary-item">
+              <span class="text">Total</span
+              ><span class="price">${{ total }}</span>
+            </div>
+            <button
+              [disabled]="!cartService.cart || cartService.cart.length === 0"
+              type="button"
+              (click)="sendToCheckout()"
+              class="btn btn-primary btn-lg btn-block"
+            >
+              Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>

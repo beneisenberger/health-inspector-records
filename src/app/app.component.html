@@ -1,15 +1,29 @@
-<div class="container">
-  <a *ngIf="visible" href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-  <span class="open" (click)="openNav()">&#9776; <br>
-    <img style="height: 40px; margin-right: 10px;" src="../assets/logo-image.jpg">
+<div class="the-top-bar">
+  <span class="open" (click)="openNav()"
+    >&#9776; <br />
+    <a
+      *ngIf="visible"
+      href="javascript:void(0)"
+      class="closebtn"
+      (click)="closeNav()"
+      >&times;</a
+    >
+    <!-- <img style="height: 40px; margin-right: 10px;" src="../assets/logo-image.jpg"> -->
   </span>
+</div>
+<div class="container">
   <div id="myNav" class="overlay">
     <div class="overlay-content">
-      <a routerLink="about">About</a>
-      <a routerLink="artists">Artists</a>
-      <a routerLink="store">Store</a>
+      <a style="cursor: pointer;" routerLinkActive (click)="navigate('about')"
+        >About</a
+      >
+      <a style="cursor: pointer;" routerLinkActive (click)="navigate('artists')"
+        >Artists</a
+      >
+      <a style="cursor: pointer;" routerLinkActive (click)="navigate('store')"
+        >Store</a
+      >
     </div>
   </div>
   <router-outlet></router-outlet>
 </div>
-
