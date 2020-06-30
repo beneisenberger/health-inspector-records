@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { registerLocaleData } from "@angular/common";
 import en from "@angular/common/locales/en";
 import { ArtistInfoComponent } from "./artists/artist-info/artist-info.component";
+import { OverlayMenuComponent } from './overlay-menu/overlay-menu.component';
 
 registerLocaleData(en);
 
@@ -35,6 +36,7 @@ registerLocaleData(en);
     CartComponent,
     CheckoutComponent,
     ArtistInfoComponent,
+    OverlayMenuComponent,
   ],
   imports: [
     BrowserModule,

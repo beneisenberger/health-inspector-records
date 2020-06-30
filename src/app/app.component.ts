@@ -14,14 +14,10 @@ export class AppComponent {
   constructor(public router: Router, public cartSerivce: CartService) {}
 
   openNav() {
-    document.getElementById("myNav").style.opacity = "100%";
-    document.getElementById("myNav").style.zIndex = "2";
     this.visible = true;
   }
 
   closeNav() {
-    document.getElementById("myNav").style.opacity = "0%";
-    document.getElementById("myNav").style.zIndex = "-1";
     this.visible = false;
   }
 
