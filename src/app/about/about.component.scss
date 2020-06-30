@@ -9,12 +9,9 @@
   text-align: center;
 }
 
-.image {
-  max-width: 600px;
-}
-
-@media (max-width: 500px) {
+@media (max-width: 991px) {
   .main {
     padding: 100px 20px;
+    background-color: white;
   }
 }

@@ -79,8 +79,9 @@
   text-align: center;
 }
 
-@media (min-height: 990px) {
+@media (min-height: 768px) {
   .tall {
     height: 100%;
+    object-fit: cover;
   }
 }

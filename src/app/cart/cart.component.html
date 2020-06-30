@@ -2,18 +2,18 @@
   <section class="shopping-cart dark" *ngIf="cart.length > 0">
     <div class="container">
       <div class="content row">
-        <div class="col-md-12 col-lg-8 items">
+        <div class="col-sm-12 col-lg-8 items">
           <div
             class="product row"
             *ngFor="let item of cartService.cart$ | async; let i = index"
           >
-            <div class="col-md-3">
+            <div class="col-4">
               <img
                 class="img-fluid mx-auto d-block image"
                 [src]="item.imageUrl"
               />
             </div>
-            <div class="col-md-8">
+            <div class="col-7">
               <div class="info row">
                 <div class="col-md-5 product-name">
                   <div class="product-name">
@@ -52,7 +52,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 col-lg-4">
+        <div class="col-sm-12 col-lg-4">
           <div class="summary">
             <h3>Summary</h3>
             <div class="summary-item">
