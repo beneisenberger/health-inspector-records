@@ -1,5 +1,10 @@
 <div class="container mt-5">
   <div class="row">
+    <img
+      class="col-12"
+      style="margin-top: 10px;"
+      src="./assets/logo-text.png"
+    />
     <div class="col-12" *ngFor="let post of posts">
       <article class="blog-card">
         <div class="blog-card__background">
@@ -32,5 +37,9 @@
   <div class="container mt-5"></div>
 </section>
 
-<button (click)="newPost()">New Post</button>
-<app-new-post *ngIf="isNewPostModalVisible"></app-new-post>
+<div>
+  <button (click)="newPost()">
+    New Post
+  </button>
+  <app-new-post *ngIf="isNewPostModalVisible"></app-new-post>
+</div>

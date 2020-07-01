@@ -22,6 +22,7 @@ import { ArtistInfoComponent } from "./artists/artist-info/artist-info.component
 import { OverlayMenuComponent } from "./overlay-menu/overlay-menu.component";
 import { NewsComponent } from "./news/news.component";
 import { NewPostComponent } from "./news/new-post/new-post.component";
+import { FadeDirective } from './directives/fade.directive';
 
 registerLocaleData(en);
 
@@ -41,6 +42,7 @@ registerLocaleData(en);
     OverlayMenuComponent,
     NewsComponent,
     NewPostComponent,
+    FadeDirective,
   ],
   imports: [
     BrowserModule,

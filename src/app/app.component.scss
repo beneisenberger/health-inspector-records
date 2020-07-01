@@ -28,26 +28,15 @@
   width: 100%;
 }
 
-.closebtn {
-  position: fixed;
-  font-size: 60px !important;
-  display: block;
-  cursor: pointer;
-  color: #818181;
-  text-decoration: none;
-  left: 19%;
-  top: -24px;
-}
-
 .closebtn:hover {
   color: #f1f1f1;
 }
 
 .back-button {
   height: 28px;
-  position: relative;
-  top: -42px;
-  left: 60px;
+  position: fixed;
+  left: 25%;
+  top: 28px;
   background-color: white;
   z-index: 3;
   cursor: pointer;
@@ -62,14 +51,25 @@
 .upper-text {
   position: fixed;
   display: block;
+  top: 30px;
   right: 20%;
-  top: 22px;
 }
 
 .open {
+  font-size: 40px;
   cursor: pointer;
   z-index: 3;
-  font-size: 40px;
+  position: fixed;
+  top: 10px;
+  left: 20%;
+}
+
+.closebtn {
+  position: fixed;
+  top: -5px;
+  font-size: 55px !important;
+  color: #818181;
+  text-decoration: none;
 }
 
 .overlay-content {
@@ -107,5 +107,19 @@
     font-size: 40px;
     top: 15px;
     right: 35px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .back-button {
+    left: 25%;
+  }
+
+  .open {
+    left: 10%;
+  }
+
+  .upper-text {
+    right: 10%;
   }
 }

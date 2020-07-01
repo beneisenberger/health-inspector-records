@@ -1,6 +1,15 @@
+<span class="open" *ngIf="!visible"><a (click)="openNav()">&#9776;</a> </span>
+<span class="open">
+  <a
+    href="javascript:void(0)"
+    *ngIf="visible"
+    class="closebtn"
+    (click)="closeNav()"
+    >&times;</a
+  >
+</span>
 <div class="the-top-bar">
   <div class="top-button-container" *ngIf="!visible">
-    <span class="open" (click)="openNav()">&#9776; <br /> </span>
     <img
       *ngIf="router.url.includes('artists/')"
       (click)="onBack('artists')"
@@ -34,15 +43,6 @@
 </div>
 <div class="container">
   <div id="myNav" class="overlay" *ngIf="visible">
-    <span class="open">
-      <a
-        href="javascript:void(0)"
-        *ngIf="visible"
-        class="closebtn"
-        (click)="closeNav()"
-        >&times;</a
-      >
-    </span>
     <div class="overlay-content">
       <a style="cursor: pointer;" routerLinkActive (click)="navigate('news')"
         >News</a

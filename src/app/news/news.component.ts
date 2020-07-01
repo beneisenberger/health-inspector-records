@@ -12,7 +12,7 @@ export class NewsComponent implements OnInit {
   posts: Post[] = [];
   isNewPostModalVisible = false;
 
-  constructor(private postService: PostService, private auth: AuthService) {}
+  constructor(private postService: PostService, public auth: AuthService) {}
 
   ngOnInit() {
     this.getPosts();
