@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12" *ngFor="let post of posts">
+      <article class="blog-card">
+        <div class="blog-card__background">
+          <div class="card__background--wrapper">
+            <div
+              class="card__background--main"
+              [style.backgroundImage]="'url(' + post.image + ')'"
+            >
+              <div class="card__background--layer"></div>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card__head"></div>
+        <div class="blog-card__info">
+          <h5>{{ post.title }}</h5>
+          <p style="margin-bottom: 50px;">
+            {{ post.published.toDate() | date }}
+          </p>
+          <p [innerHTML]="post.content"></p>
+          <a href="#" class="btn btn--with-icon"
+            ><i class="btn-icon fa fa-long-arrow-right"></i>READ MORE</a
+          >
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<section class="detail-page">
+  <div class="container mt-5"></div>
+</section>
+
+<button (click)="newPost()">New Post</button>
+<app-new-post *ngIf="isNewPostModalVisible"></app-new-post>

@@ -8,9 +8,11 @@ import { ArtistsComponent } from "./artists/artists.component";
 import { CartComponent } from "./cart/cart.component";
 import { CheckoutComponent } from "./checkout/checkout.component";
 import { ArtistInfoComponent } from "./artists/artist-info/artist-info.component";
+import { NewsComponent } from "./news/news.component";
 
 const routes: Routes = [
   { path: "about", component: AboutComponent },
+  { path: "news", component: NewsComponent },
   { path: "releases", component: DiscographyComponent },
   { path: "contact", component: ContactComponent },
   { path: "store", component: StoreComponent },

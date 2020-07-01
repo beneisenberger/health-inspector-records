@@ -1,11 +1,21 @@
+import * as firebase from "firebase";
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyDuKuOkPZr3UMgbXxPOqGiOzvYcKNoSJZo",
+    authDomain: "health-inspector-records.firebaseapp.com",
+    databaseURL: "https://health-inspector-records.firebaseio.com",
+    projectId: "health-inspector-records",
+    storageBucket: "health-inspector-records.appspot.com",
+    messagingSenderId: "907483343833",
+    appId: "1:907483343833:web:68c04980e30154747ac7c8",
+    measurementId: "G-WNQZ36G2S0",
+  },
 };
-
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
@@ -17,11 +27,13 @@ export const environment = {
 
 export const config = {
   apiKey: "AIzaSyDuKuOkPZr3UMgbXxPOqGiOzvYcKNoSJZo",
-    authDomain: "health-inspector-records.firebaseapp.com",
-    databaseURL: "https://health-inspector-records.firebaseio.com",
-    projectId: "health-inspector-records",
-    storageBucket: "health-inspector-records.appspot.com",
-    messagingSenderId: "907483343833",
-    appId: "1:907483343833:web:68c04980e30154747ac7c8",
-    measurementId: "G-WNQZ36G2S0"
-}
+  authDomain: "health-inspector-records.firebaseapp.com",
+  databaseURL: "https://health-inspector-records.firebaseio.com",
+  projectId: "health-inspector-records",
+  storageBucket: "health-inspector-records.appspot.com",
+  messagingSenderId: "907483343833",
+  appId: "1:907483343833:web:68c04980e30154747ac7c8",
+  measurementId: "G-WNQZ36G2S0",
+};
+
+firebase.initializeApp(config);

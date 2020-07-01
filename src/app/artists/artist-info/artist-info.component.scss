@@ -12,10 +12,33 @@
 .name {
   font-size: 40px;
   text-align: center;
-  padding: 20px 0 50px 0;
+  padding: 20px 0 20px 0;
 }
 
 .description {
   white-space: pre-line;
   text-align: justify;
+}
+
+// @media (max-width: 1200px) {
+//   .image {
+//     max-width: 250px;
+//     max-height: 250px;
+//   }
+// }
+
+@media (max-width: 768px) {
+  .main-area {
+    margin: 80px 0px;
+  }
+
+  .image {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px 10px;
+  }
+
+  .name {
+    width: 100%;
+  }
 }

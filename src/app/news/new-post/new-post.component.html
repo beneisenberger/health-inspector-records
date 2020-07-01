@@ -1,0 +1,27 @@
+<section>
+  <h3>Create a Post</h3>
+  <div>
+    <input type="file" name="file" id="file" (change)="uploadImage($event)" />
+    <div [hidden]="!image">
+      <img [src]="image || '//:0'" />
+    </div>
+  </div>
+
+  <input matInput placeholder="Post Title" [(ngModel)]="title" />
+  <br />
+  <textarea
+    matInput
+    placeholder="Post Content"
+    rows="10"
+    [(ngModel)]="content"
+  ></textarea>
+  <br />
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="createPost()"
+    [disabled]="!title || !content || !image"
+  >
+    {{ buttonText }}
+  </button>
+</section>

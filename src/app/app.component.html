@@ -4,21 +4,18 @@
     <img
       *ngIf="router.url.includes('artists/')"
       (click)="onBack('artists')"
-      style="height: 33px;"
       class="back-button"
       src="../assets/back.png"
     />
     <img
       *ngIf="router.url.includes('cart')"
       (click)="onBack('cart')"
-      style="height: 33px;"
       class="back-button"
       src="../assets/back.png"
     />
     <img
       *ngIf="router.url.includes('checkout')"
       (click)="onBack('checkout')"
-      style="height: 33px;"
       class="back-button"
       src="../assets/back.png"
     />
@@ -47,6 +44,9 @@
       >
     </span>
     <div class="overlay-content">
+      <a style="cursor: pointer;" routerLinkActive (click)="navigate('news')"
+        >News</a
+      >
       <a style="cursor: pointer;" routerLinkActive (click)="navigate('about')"
         >About</a
       >
