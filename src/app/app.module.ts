@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -22,7 +22,15 @@ import { ArtistInfoComponent } from "./artists/artist-info/artist-info.component
 import { OverlayMenuComponent } from "./overlay-menu/overlay-menu.component";
 import { NewsComponent } from "./news/news.component";
 import { NewPostComponent } from "./news/new-post/new-post.component";
-import { FadeDirective } from './directives/fade.directive';
+import { FadeDirective } from "./directives/fade.directive";
+import {
+  environment,
+  stripe_publishable_key,
+} from "src/environments/environment";
+import { NgxStripeModule } from "ngx-stripe";
+
+import * as firebase from "firebase";
+firebase.initializeApp(environment.firebase);
 
 registerLocaleData(en);
 
@@ -48,9 +56,11 @@ registerLocaleData(en);
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgZorroAntdModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxStripeModule.forRoot(stripe_publishable_key),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

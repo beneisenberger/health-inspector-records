@@ -39,6 +39,7 @@ export class NewPostComponent implements OnInit {
     this.postService.addPost(data);
     this.title = "";
     this.content = "";
+    this.image = "";
     this.buttonText = "Post Successful!";
 
     setTimeout(() => (this.buttonText = "Post"), 3000);

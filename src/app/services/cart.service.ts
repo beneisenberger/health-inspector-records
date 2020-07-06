@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { loadStripe } from "@stripe/stripe-js";
+import * as firebase from "firebase/app";
+import { StripeService } from "ngx-stripe";
 
 export interface Cart {
   artist: string;
@@ -15,6 +16,10 @@ export interface Cart {
   providedIn: "root",
 })
 export class CartService {
+  functions = firebase.functions();
+  db = firebase.firestore();
+  database = firebase.database();
+
   private readonly _cart = new BehaviorSubject<Cart[]>(
     JSON.parse(localStorage.getItem("cartItems"))
   );
@@ -22,19 +27,8 @@ export class CartService {
 
   addedItem: Cart[] = [];
   checkoutItems: any;
-  stripe: any;
-  session: any;
 
-  handler;
-  confirmation;
-
-  constructor() {}
-
-  // async createSession() {
-  //   this.session = await (await stripe).createSource().then(res => {
-
-  //   })
-  // }
+  constructor(private stripeService: StripeService) {}
 
   get cart(): Cart[] {
     if (this._cart) {
@@ -82,5 +76,21 @@ export class CartService {
       subtotal: sub,
       shipping: ship,
     };
+  }
+
+  processPayment(customerInformation, amount, items, card) {
+    const name = customerInformation.name;
+    this.stripeService.createToken(card, { name }).subscribe(async (result) => {
+      if (result.token) {
+        const payment = { token: result.token, amount: amount * 100 };
+        this.database.ref("/payments/" + result.token.id).push(payment);
+        this.db
+          .collection("payments")
+          .doc(result.token.id)
+          .set({ ...customerInformation, items });
+      } else if (result.error) {
+        console.log(result.error.message);
+      }
+    });
   }
 }

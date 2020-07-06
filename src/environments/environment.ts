@@ -1,4 +1,3 @@
-import * as firebase from "firebase";
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -36,4 +35,7 @@ export const config = {
   measurementId: "G-WNQZ36G2S0",
 };
 
-firebase.initializeApp(config);
+export const stripe_publishable_key =
+  "pk_test_51Gz9reEj2FSjwBHyILdrbdhb2jTlVbKvct4DSuH0OLVCY5TKiHqGrm0CUBuTpUB52o3gwI20Ticb4hRBaqwqHQSC00FzjCIo01";
+export const stripe_secret_key =
+  "sk_test_51Gz9reEj2FSjwBHyStCktxESihKuTf8QV7A6oZ6CFrOYeaT3rbs6kvEHHirT4rF5mEu5HfHrVxxPnB1a3VAHdh4I00K2q7kqqF";

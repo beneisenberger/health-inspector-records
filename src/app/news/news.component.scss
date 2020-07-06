@@ -21,8 +21,6 @@ body {
   padding: 30px;
   position: relative;
   max-width: 700px;
-  max-height: 700px;
-  overflow: hidden;
   .date__box {
     opacity: 0;
     transform: scale(0.5);
@@ -128,5 +126,9 @@ a.icon-link {
 @media (min-width: 992px) {
   .row {
     margin-left: calc(50% - 350px);
+  }
+
+  .image {
+    margin-left: -9%;
   }
 }

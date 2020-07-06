@@ -1,10 +1,12 @@
 <div class="container mt-5">
   <div class="row">
-    <img
-      class="col-12"
-      style="margin-top: 10px;"
-      src="./assets/logo-text.png"
-    />
+    <div>
+      <img
+        class="col-12 image"
+        style="margin-top: 10px; max-height: 100%; object-fit: contain;"
+        src="./assets/logo-text.png"
+      />
+    </div>
     <div class="col-12" *ngFor="let post of posts">
       <article class="blog-card">
         <div class="blog-card__background">
@@ -23,10 +25,7 @@
           <p style="margin-bottom: 50px;">
             {{ post.published.toDate() | date }}
           </p>
-          <p [innerHTML]="post.content"></p>
-          <a href="#" class="btn btn--with-icon"
-            ><i class="btn-icon fa fa-long-arrow-right"></i>READ MORE</a
-          >
+          <div [innerHTML]="post.content"></div>
         </div>
       </article>
     </div>

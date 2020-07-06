@@ -30,7 +30,7 @@
     />
     <a
       class="upper-text"
-      *ngIf="router.url === '/store'"
+      *ngIf="router.url === '/store' && cartSerivce.cart"
       routerLink="store/cart"
       ><img
         style="height: 20px; margin-right: 10px;"
