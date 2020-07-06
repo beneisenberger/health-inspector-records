@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, TemplateRef } from "@angular/core";
 import { CartService } from "../services/cart.service";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { StripeService, Elements } from "ngx-stripe";
-import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { NzModalService } from "ng-zorro-antd";
 
 @Component({
   selector: "app-checkout",
@@ -11,6 +11,8 @@ import { MatDialog, MatDialogRef } from "@angular/material/dialog";
   styleUrls: ["./checkout.component.scss"],
 })
 export class CheckoutComponent implements OnInit {
+  @ViewChild("callAPIDialog") callAPIDialog: TemplateRef<any>;
+
   items: any;
 
   checkoutForm: FormGroup;
@@ -22,7 +24,7 @@ export class CheckoutComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private stripeService: StripeService,
-    public dialog: MatDialog
+    private modal: NzModalService
   ) {
     if (this.cartService.checkoutItems) {
       this.items = this.cartService.checkoutItems;
@@ -64,19 +66,16 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
-  pay(templateRef, amount) {
-    let dialogRef = this.dialog.open(templateRef, {
-      width: "250px",
-      // data: { name: this.name, animal: this.animal }
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
-      this.sendIt(amount);
+  pay(amount) {
+    this.modal.create({
+      nzTitle: "Health Inspector Store",
+      nzContent: `You are about to make a purchase for $${amount}.00. Continue?`,
+      nzClosable: false,
+      nzOnOk: () => this.purchase(amount),
     });
   }
 
-  sendIt(amount) {
+  purchase(amount) {
     this.cartService.processPayment(
       this.checkoutForm.value,
       amount,

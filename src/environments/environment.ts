@@ -36,6 +36,4 @@ export const config = {
 };
 
 export const stripe_publishable_key =
-  "pk_test_51Gz9reEj2FSjwBHyILdrbdhb2jTlVbKvct4DSuH0OLVCY5TKiHqGrm0CUBuTpUB52o3gwI20Ticb4hRBaqwqHQSC00FzjCIo01";
-export const stripe_secret_key =
-  "sk_test_51Gz9reEj2FSjwBHyStCktxESihKuTf8QV7A6oZ6CFrOYeaT3rbs6kvEHHirT4rF5mEu5HfHrVxxPnB1a3VAHdh4I00K2q7kqqF";
+  "pk_live_51Gz9reEj2FSjwBHykat581bizpAQKqlhKPRn7Q3f4Jh574C1fhhdaXHG1QrvXbBV4rHlc66gI4soVoleFaXlkNun00tsFKaQsX";

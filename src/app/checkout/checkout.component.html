@@ -118,7 +118,7 @@
               [disabled]="!checkoutForm.valid"
               type=""
               type="button"
-              (click)="pay(myTemplate, items.total)"
+              (click)="pay(items.total)"
               class="btn btn-primary btn-block"
             >
               Place Order
@@ -129,7 +129,3 @@
     </div>
   </section>
 </main>
-
-<ng-template #myTemplate>
-  <h1>Are you sure?</h1>
-</ng-template>

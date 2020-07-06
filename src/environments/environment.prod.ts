@@ -5,8 +5,6 @@ import * as firebase from "firebase";
 
 export const environment = {
   production: true,
-  stripeKey:
-    "pk_test_51Gz9reEj2FSjwBHyILdrbdhb2jTlVbKvct4DSuH0OLVCY5TKiHqGrm0CUBuTpUB52o3gwI20Ticb4hRBaqwqHQSC00FzjCIo01",
   firebase: {
     apiKey: "AIzaSyDuKuOkPZr3UMgbXxPOqGiOzvYcKNoSJZo",
     authDomain: "health-inspector-records.firebaseapp.com",

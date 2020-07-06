@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import * as firebase from "firebase/app";
 import { StripeService } from "ngx-stripe";
+import { NzMessageService } from "ng-zorro-antd";
 
 export interface Cart {
   artist: string;
@@ -28,7 +29,10 @@ export class CartService {
   addedItem: Cart[] = [];
   checkoutItems: any;
 
-  constructor(private stripeService: StripeService) {}
+  constructor(
+    private stripeService: StripeService,
+    private message: NzMessageService
+  ) {}
 
   get cart(): Cart[] {
     if (this._cart) {
@@ -89,7 +93,7 @@ export class CartService {
           .doc(result.token.id)
           .set({ ...customerInformation, items });
       } else if (result.error) {
-        console.log(result.error.message);
+        this.message.error(result.error.message);
       }
     });
   }
