@@ -35,3 +35,6 @@ export const config = {
   appId: "1:907483343833:web:68c04980e30154747ac7c8",
   measurementId: "G-WNQZ36G2S0",
 };
+
+export const stripe_publishable_key =
+  "pk_live_51Gz9reEj2FSjwBHykat581bizpAQKqlhKPRn7Q3f4Jh574C1fhhdaXHG1QrvXbBV4rHlc66gI4soVoleFaXlkNun00tsFKaQsX";
